@@ -1,0 +1,3 @@
+/home/viniss/Temp/compiladores-workspace/build/CMakeFiles/MansynLex.dir
+/home/viniss/Temp/compiladores-workspace/build/CMakeFiles/edit_cache.dir
+/home/viniss/Temp/compiladores-workspace/build/CMakeFiles/rebuild_cache.dir

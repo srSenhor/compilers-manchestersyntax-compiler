@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/viniss/Temp/compiladores-workspace/build",
+  "command": "/usr/bin/g++  -I/home/viniss/Temp/compiladores-workspace/build -I/home/viniss/Temp/compiladores-workspace  -o CMakeFiles/MansynLex.dir/lex.yy.cc.o -c /home/viniss/Temp/compiladores-workspace/build/lex.yy.cc",
+  "file": "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc"
+}
+]
