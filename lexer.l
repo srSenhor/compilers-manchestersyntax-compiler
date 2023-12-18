@@ -1,8 +1,17 @@
 %{
 #include <iostream>
-using std::cout;
+#include <string>
+#include <unordered_map>
+#include "tokens.h"
 
-enum{ KEYWORD = 1, CLASS_ID, PROP_ID, SUBJECT, DATATYPE, NUM, SPECIAL_CHAR };
+using std::cout;
+using std::string;
+using std::unordered_map;
+
+int token = 0;
+unordered_map<string, int> table;
+
+void store(string value, int token);
 %}
 
 %option noyywrap
@@ -23,41 +32,41 @@ datatype        {lower_name}:({letter})+
 
 %%
 {wp}                ;
-some|SOME           return KEYWORD;
-all|ALL             return KEYWORD;
-value|VALUE         return KEYWORD;
-min|MIN             return KEYWORD;
-max|MAX             return KEYWORD;
-exactly|EXACTLY     return KEYWORD;
-that|THAT           return KEYWORD;
-not|NOT             return KEYWORD;
-and|AND             return KEYWORD;
-or|OR               return KEYWORD;
-only|ONLY           return KEYWORD;
-Class:              return KEYWORD; 
-EquivalentTo:       return KEYWORD; 
-SubClassOf:         return KEYWORD; 
-DisjointClasses:    return KEYWORD; 
-Individuals:        return KEYWORD; 
+some|SOME           store(YYText(), SOME);
+all|ALL             store(YYText(), ALL);
+value|VALUE         store(YYText(), VALUE);
+min|MIN             store(YYText(), MIN);
+max|MAX             store(YYText(), MAX);
+exactly|EXACTLY     store(YYText(), EXACTLY);
+that|THAT           store(YYText(), THAT);
+not|NOT             store(YYText(), NOT);
+and|AND             store(YYText(), AND);
+or|OR               store(YYText(), OR);
+only|ONLY           store(YYText(), ONLY);
+Class:              store(YYText(), CLASS);
+EquivalentTo:       store(YYText(), EQUIVALENTTO);
+SubClassOf:         store(YYText(), SUBCLASSOF);
+DisjointClasses:    store(YYText(), DISJOINTCLASSES);
+Individuals:        store(YYText(), INDIVIDUALS);
 
-"<"         return SPECIAL_CHAR;
-">"         return SPECIAL_CHAR;
-"("         return SPECIAL_CHAR;
-")"         return SPECIAL_CHAR;
-"["         return SPECIAL_CHAR;
-"]"         return SPECIAL_CHAR;
-"{"         return SPECIAL_CHAR;
-"}"         return SPECIAL_CHAR;
-","         return SPECIAL_CHAR;
-"<="        return SPECIAL_CHAR;
-">="        return SPECIAL_CHAR;
-"=="        return SPECIAL_CHAR;
+"<"         store(YYText(), SPECIAL_CHAR);
+">"         store(YYText(), SPECIAL_CHAR);
+"("         store(YYText(), SPECIAL_CHAR);
+")"         store(YYText(), SPECIAL_CHAR);
+"["         store(YYText(), SPECIAL_CHAR);
+"]"         store(YYText(), SPECIAL_CHAR);
+"{"         store(YYText(), SPECIAL_CHAR);
+"}"         store(YYText(), SPECIAL_CHAR);
+","         store(YYText(), SPECIAL_CHAR);
+"<="        store(YYText(), SPECIAL_CHAR);
+">="        store(YYText(), SPECIAL_CHAR);
+"=="        store(YYText(), SPECIAL_CHAR);
 
-{number}+     return NUM;
-{subject_id}  return SUBJECT;
-{class_id}    return CLASS_ID;
-{prop_id}     return PROP_ID;
-{datatype}    return DATATYPE;
+{number}+     store(YYText(), NUM);
+{subject_id}  store(YYText(), SUBJECT);
+{class_id}    store(YYText(), CLASS_ID);
+{prop_id}     store(YYText(), PROP_ID);
+{datatype}    store(YYText(), DATATYPE);
 
 .|\n          ;
 %%
@@ -66,19 +75,21 @@ Individuals:        return KEYWORD;
 int main()
 {
     yyFlexLexer lexer;
-    int token = 0;
     while((token = lexer.yylex()) != 0)
     {
-        switch(token)
-        {
-            case 1:     cout << lexer.YYText() << " : palavra-chave \n";       break;
-            case 2:     cout << lexer.YYText() << " : classe \n";              break;
-            case 3:     cout << lexer.YYText() << " : propriedade \n";         break;
-            case 4:     cout << lexer.YYText() << " : instancia \n";           break;
-            case 5:     cout << lexer.YYText() << " : tipo de dado \n";        break;
-            case 6:     cout << lexer.YYText() << " : numero \n";              break;
-            case 7:     cout << lexer.YYText() << " : caractere especial \n";  break;
-            default:    cout << lexer.YYText() << " : token nao reconhecido";
-        }
+        cout << "Table size: " << table.size() << "\n";
+    }
+}
+
+void store(string value, int token)
+{
+    if(table.find(value) != table.end())
+    {
+        cout << "This value is already in the table \n"; // TODO: criar uma tabela com as ocorrências de cada token
+    } 
+    else
+    {
+        cout << "Inserting " << value << " on table " << "\n";
+        table.insert({value, token});
     }
 }

@@ -598,11 +598,20 @@ static const flex_int16_t yy_chk[667] =
 #line 1 "lexer.l"
 #line 2 "lexer.l"
 #include <iostream>
-using std::cout;
+#include <string>
+#include <unordered_map>
+#include "tokens.h"
 
-enum{ KEYWORD = 1, CLASS_ID, PROP_ID, SUBJECT, DATATYPE, NUM, SPECIAL_CHAR };
-#line 605 "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc"
-#line 606 "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc"
+using std::cout;
+using std::string;
+using std::unordered_map;
+
+int token = 0;
+unordered_map<string, int> table;
+
+void store(string value, int token);
+#line 614 "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc"
+#line 615 "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc"
 
 #define INITIAL 0
 
@@ -734,9 +743,9 @@ YY_DECL
 		}
 
 	{
-#line 24 "lexer.l"
+#line 33 "lexer.l"
 
-#line 740 "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc"
+#line 749 "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -795,186 +804,186 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 25 "lexer.l"
+#line 34 "lexer.l"
 ;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 26 "lexer.l"
-return KEYWORD;
+#line 35 "lexer.l"
+store(YYText(), SOME);
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 27 "lexer.l"
-return KEYWORD;
+#line 36 "lexer.l"
+store(YYText(), ALL);
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 28 "lexer.l"
-return KEYWORD;
+#line 37 "lexer.l"
+store(YYText(), VALUE);
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 29 "lexer.l"
-return KEYWORD;
+#line 38 "lexer.l"
+store(YYText(), MIN);
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 30 "lexer.l"
-return KEYWORD;
+#line 39 "lexer.l"
+store(YYText(), MAX);
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 31 "lexer.l"
-return KEYWORD;
+#line 40 "lexer.l"
+store(YYText(), EXACTLY);
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 32 "lexer.l"
-return KEYWORD;
+#line 41 "lexer.l"
+store(YYText(), THAT);
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 33 "lexer.l"
-return KEYWORD;
+#line 42 "lexer.l"
+store(YYText(), NOT);
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 34 "lexer.l"
-return KEYWORD;
+#line 43 "lexer.l"
+store(YYText(), AND);
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 35 "lexer.l"
-return KEYWORD;
+#line 44 "lexer.l"
+store(YYText(), OR);
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 36 "lexer.l"
-return KEYWORD;
+#line 45 "lexer.l"
+store(YYText(), ONLY);
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 37 "lexer.l"
-return KEYWORD; 
+#line 46 "lexer.l"
+store(YYText(), CLASS);
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 38 "lexer.l"
-return KEYWORD; 
+#line 47 "lexer.l"
+store(YYText(), EQUIVALENTTO);
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 39 "lexer.l"
-return KEYWORD; 
+#line 48 "lexer.l"
+store(YYText(), SUBCLASSOF);
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 40 "lexer.l"
-return KEYWORD; 
+#line 49 "lexer.l"
+store(YYText(), DISJOINTCLASSES);
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 41 "lexer.l"
-return KEYWORD; 
+#line 50 "lexer.l"
+store(YYText(), INDIVIDUALS);
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 43 "lexer.l"
-return SPECIAL_CHAR;
+#line 52 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 44 "lexer.l"
-return SPECIAL_CHAR;
+#line 53 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 45 "lexer.l"
-return SPECIAL_CHAR;
+#line 54 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 46 "lexer.l"
-return SPECIAL_CHAR;
+#line 55 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 47 "lexer.l"
-return SPECIAL_CHAR;
+#line 56 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 48 "lexer.l"
-return SPECIAL_CHAR;
+#line 57 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 49 "lexer.l"
-return SPECIAL_CHAR;
+#line 58 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 50 "lexer.l"
-return SPECIAL_CHAR;
+#line 59 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 51 "lexer.l"
-return SPECIAL_CHAR;
+#line 60 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 52 "lexer.l"
-return SPECIAL_CHAR;
+#line 61 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 53 "lexer.l"
-return SPECIAL_CHAR;
+#line 62 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 54 "lexer.l"
-return SPECIAL_CHAR;
+#line 63 "lexer.l"
+store(YYText(), SPECIAL_CHAR);
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 56 "lexer.l"
-return NUM;
+#line 65 "lexer.l"
+store(YYText(), NUM);
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 57 "lexer.l"
-return SUBJECT;
+#line 66 "lexer.l"
+store(YYText(), SUBJECT);
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 58 "lexer.l"
-return CLASS_ID;
+#line 67 "lexer.l"
+store(YYText(), CLASS_ID);
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 59 "lexer.l"
-return PROP_ID;
+#line 68 "lexer.l"
+store(YYText(), PROP_ID);
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 60 "lexer.l"
-return DATATYPE;
+#line 69 "lexer.l"
+store(YYText(), DATATYPE);
 	YY_BREAK
 case 35:
 /* rule 35 can match eol */
 YY_RULE_SETUP
-#line 62 "lexer.l"
+#line 71 "lexer.l"
 ;
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 63 "lexer.l"
+#line 72 "lexer.l"
 ECHO;
 	YY_BREAK
-#line 978 "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc"
+#line 987 "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1937,26 +1946,28 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 63 "lexer.l"
+#line 72 "lexer.l"
 
 
 /* Uma implentação temporária para testar o reconhecimento de lexemas */
 int main()
 {
     yyFlexLexer lexer;
-    int token = 0;
     while((token = lexer.yylex()) != 0)
     {
-        switch(token)
-        {
-            case 1:     cout << lexer.YYText() << " : palavra-chave \n";       break;
-            case 2:     cout << lexer.YYText() << " : classe \n";              break;
-            case 3:     cout << lexer.YYText() << " : propriedade \n";         break;
-            case 4:     cout << lexer.YYText() << " : instancia \n";           break;
-            case 5:     cout << lexer.YYText() << " : tipo de dado \n";        break;
-            case 6:     cout << lexer.YYText() << " : numero \n";              break;
-            case 7:     cout << lexer.YYText() << " : caractere especial \n";  break;
-            default:    cout << lexer.YYText() << " : token nao reconhecido";
-        }
+        cout << "Table size: " << table.size() << "\n";
+    }
+}
+
+void store(string value, int token)
+{
+    if(table.find(value) != table.end())
+    {
+        cout << "This value is already in the table \n"; // TODO: criar uma tabela com as ocorrências de cada token
+    } 
+    else
+    {
+        cout << "Inserting " << value << " on table " << "\n";
+        table.insert({value, token});
     }
 }

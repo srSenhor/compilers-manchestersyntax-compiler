@@ -1,0 +1,25 @@
+enum
+{
+    SOME = 1,
+    ALL,
+    VALUE,
+    MIN,
+    MAX,
+    EXACTLY,
+    THAT,
+    NOT,
+    AND,
+    OR,
+    ONLY,
+    CLASS,
+    EQUIVALENTTO,
+    SUBCLASSOF,
+    DISJOINTCLASSES,
+    INDIVIDUALS,
+    CLASS_ID,
+    PROP_ID,
+    SUBJECT,
+    DATATYPE,
+    NUM,
+    SPECIAL_CHAR
+};
