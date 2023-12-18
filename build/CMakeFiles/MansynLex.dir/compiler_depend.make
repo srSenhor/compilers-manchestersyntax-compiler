@@ -199,6 +199,7 @@ CMakeFiles/MansynLex.dir/lex.yy.cc.o: lex.yy.cc \
   /usr/include/c++/11/bits/node_handle.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
+  ../token.h \
   ../tokens.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
@@ -208,6 +209,10 @@ CMakeFiles/MansynLex.dir/lex.yy.cc.o: lex.yy.cc \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h
+
+CMakeFiles/MansynLex.dir/token.cpp.o: ../token.cpp \
+  /usr/include/stdc-predef.h \
+  ../token.h
 
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
@@ -253,6 +258,8 @@ CMakeFiles/MansynLex.dir/lex.yy.cc.o: lex.yy.cc \
 /usr/include/c++/11/cwctype:
 
 /usr/include/c++/11/bits/locale_facets.h:
+
+../token.cpp:
 
 /usr/include/c++/11/bits/basic_ios.h:
 
@@ -559,6 +566,8 @@ CMakeFiles/MansynLex.dir/lex.yy.cc.o: lex.yy.cc \
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/c++/11/bits/ios_base.h:
+
+../token.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
 

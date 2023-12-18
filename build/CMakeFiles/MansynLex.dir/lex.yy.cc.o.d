@@ -158,6 +158,7 @@ CMakeFiles/MansynLex.dir/lex.yy.cc.o: \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/bits/erase_if.h \
+ /home/viniss/Temp/compiladores-workspace/token.h \
  /home/viniss/Temp/compiladores-workspace/tokens.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \

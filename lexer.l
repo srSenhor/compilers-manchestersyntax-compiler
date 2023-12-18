@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <unordered_map>
+#include "token.h"
 #include "tokens.h"
 
 using std::cout;
@@ -9,9 +10,10 @@ using std::string;
 using std::unordered_map;
 
 int token = 0;
-unordered_map<string, int> table;
+unordered_map<string, Token> table;
 
 void store(string value, int token);
+void show();
 %}
 
 %option noyywrap
@@ -27,7 +29,7 @@ lower_name      {lower_letter}+
 subject_id      {name}+({number})+
 class_id        {name}+(_name|name)*
 prop_id         {lower_name}({name})+
-datatype        {lower_name}:({letter})+
+datatype        {lower_name}:([ ]?{letter})+
 
 
 %%
@@ -70,8 +72,8 @@ Individuals:        store(YYText(), INDIVIDUALS);
 
 .|\n          ;
 %%
-
-/* Uma implentação temporária para testar o reconhecimento de lexemas */
+ /* Não reconhece DATATYPE como o mesmo lexema caso tenha espaço. Ex.: xsd: integer e xsd:integer */
+ //TODO: Separar as funções auxiliares em outro arquivo
 int main()
 {
     yyFlexLexer lexer;
@@ -79,17 +81,51 @@ int main()
     {
         cout << "Table size: " << table.size() << "\n";
     }
+    show();
 }
 
 void store(string value, int token)
 {
-    if(table.find(value) != table.end())
+    auto pos = table.find(value);
+    if(pos != table.end())
     {
-        cout << "This value is already in the table \n"; // TODO: criar uma tabela com as ocorrências de cada token
+        pos->second.increment();
     } 
     else
     {
-        cout << "Inserting " << value << " on table " << "\n";
-        table.insert({value, token});
+        table.insert({value, Token(token)});
+    }
+}
+
+void show()
+{
+    for(auto iter = table.begin(); iter != table.end(); iter++)
+    {
+        cout    << "Lexem: "    << iter->first                  << "\t";
+        switch(iter->second.getValue())
+        {
+            case SOME:              cout << "Token: SOME"               << "\t\t"; break;
+            case ALL:               cout << "Token: ALL"                << "\t\t"; break;
+            case VALUE:             cout << "Token: VALUE"              << "\t\t"; break;
+            case MIN:               cout << "Token: MIN"                << "\t\t"; break;
+            case MAX:               cout << "Token: MAX"                << "\t\t"; break;
+            case EXACTLY:           cout << "Token: EXACTLY"            << "\t\t"; break;
+            case THAT:              cout << "Token: THAT"               << "\t\t"; break;
+            case NOT:               cout << "Token: NOT"                << "\t\t"; break;
+            case AND:               cout << "Token: AND"                << "\t\t"; break;
+            case OR:                cout << "Token: OR"                 << "\t\t"; break;
+            case ONLY:              cout << "Token: ONLY"               << "\t\t"; break;
+            case CLASS:             cout << "Token: CLASS"              << "\t\t"; break;
+            case EQUIVALENTTO:      cout << "Token: EQUIVALENTTO"       << "\t\t"; break;
+            case SUBCLASSOF:        cout << "Token: SUBCLASSOF"         << "\t\t"; break;
+            case DISJOINTCLASSES:   cout << "Token: DISJOINTCLASSES"    << "\t\t"; break;
+            case INDIVIDUALS:       cout << "Token: INDIVIDUALS"        << "\t\t"; break;
+            case CLASS_ID:          cout << "Token: CLASS_ID"           << "\t\t"; break;
+            case PROP_ID:           cout << "Token: PROP_ID"            << "\t\t"; break;
+            case SUBJECT:           cout << "Token: SUBJECT"            << "\t\t"; break;
+            case DATATYPE:          cout << "Token: DATATYPE"           << "\t\t"; break;
+            case SPECIAL_CHAR:      cout << "Token: SPECIAL_CHAR"       << "\t\t"; break;
+        };
+        cout    << "Ocurrency: "<< iter->second.getOcurrency()  << "\n";
     }
 }

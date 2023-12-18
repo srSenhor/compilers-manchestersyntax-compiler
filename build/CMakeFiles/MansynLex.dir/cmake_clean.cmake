@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MansynLex.dir/lex.yy.cc.o"
   "CMakeFiles/MansynLex.dir/lex.yy.cc.o.d"
+  "CMakeFiles/MansynLex.dir/token.cpp.o"
+  "CMakeFiles/MansynLex.dir/token.cpp.o.d"
   "MansynLex"
   "MansynLex.pdb"
   "lex.yy.cc"

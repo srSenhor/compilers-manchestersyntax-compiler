@@ -8,7 +8,9 @@ O seguinte projeto tem como objetivo implementar um compilador simples para um c
 
 ### Analisador Léxico
 
-Por ora, ele consegue reconhecer os padrões dos testes e retornar os tokens correspondentes. O objetivo agora é diversificar os tokens de palavras-chave e adicionar mais padrões a serem reconhecidos.
+O analisador léxico até agora é capaz de reconhecer alguns lexemas que foram pré-definidos, atribuindo um token a cada um. A ocorrência de cada lexema é armazenada junto ao token em uma classe "Token".
+
+É possível acessar os arquivos de teste utilizados no diretório "tests".
 
 ## Tecnologias usadas
 - Flex

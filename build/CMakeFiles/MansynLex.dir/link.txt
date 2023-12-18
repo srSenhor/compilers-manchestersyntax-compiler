@@ -1,1 +1,1 @@
-/usr/bin/g++ -rdynamic CMakeFiles/MansynLex.dir/lex.yy.cc.o -o MansynLex 
+/usr/bin/g++ -rdynamic CMakeFiles/MansynLex.dir/token.cpp.o CMakeFiles/MansynLex.dir/lex.yy.cc.o -o MansynLex 
