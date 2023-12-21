@@ -9,7 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/viniss/Temp/compiladores-workspace/build/lex.yy.cc" "CMakeFiles/MansynLex.dir/lex.yy.cc.o" "gcc" "CMakeFiles/MansynLex.dir/lex.yy.cc.o.d"
-  "/home/viniss/Temp/compiladores-workspace/token.cpp" "CMakeFiles/MansynLex.dir/token.cpp.o" "gcc" "CMakeFiles/MansynLex.dir/token.cpp.o.d"
+  "/home/viniss/Temp/compiladores-workspace/main.cpp" "CMakeFiles/MansynLex.dir/main.cpp.o" "gcc" "CMakeFiles/MansynLex.dir/main.cpp.o.d"
+  "/home/viniss/Temp/compiladores-workspace/tokengen.cpp" "CMakeFiles/MansynLex.dir/tokengen.cpp.o" "gcc" "CMakeFiles/MansynLex.dir/tokengen.cpp.o.d"
   )
 
 # Targets to which this target links.

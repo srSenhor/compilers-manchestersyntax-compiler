@@ -3,7 +3,7 @@ project(MansynLex)
 
 set(CMAKE_BUILD_TYPE Build)
 set(CMAKE_CXX_STANDARD 17)
-set(SOURCES token.cpp)
+set(SOURCES tokengen.cpp main.cpp)
 
 find_package(FLEX)
 FLEX_TARGET(Lexer lexer.l ${CMAKE_CURRENT_BINARY_DIR}/lex.yy.cc COMPILE_FLAGS "-+")

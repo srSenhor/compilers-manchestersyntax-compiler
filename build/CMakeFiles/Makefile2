@@ -81,12 +81,12 @@ clean: CMakeFiles/MansynLex.dir/clean
 CMakeFiles/MansynLex.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/viniss/Temp/compiladores-workspace/build/CMakeFiles --progress-num=1,2,3,4 "Built target MansynLex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/viniss/Temp/compiladores-workspace/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target MansynLex"
 .PHONY : CMakeFiles/MansynLex.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MansynLex.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/viniss/Temp/compiladores-workspace/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/viniss/Temp/compiladores-workspace/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MansynLex.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/viniss/Temp/compiladores-workspace/build/CMakeFiles 0
 .PHONY : CMakeFiles/MansynLex.dir/rule

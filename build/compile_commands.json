@@ -1,8 +1,13 @@
 [
 {
   "directory": "/home/viniss/Temp/compiladores-workspace/build",
-  "command": "/usr/bin/g++  -I/home/viniss/Temp/compiladores-workspace/build -I/home/viniss/Temp/compiladores-workspace  -o CMakeFiles/MansynLex.dir/token.cpp.o -c /home/viniss/Temp/compiladores-workspace/token.cpp",
-  "file": "/home/viniss/Temp/compiladores-workspace/token.cpp"
+  "command": "/usr/bin/g++  -I/home/viniss/Temp/compiladores-workspace/build -I/home/viniss/Temp/compiladores-workspace  -o CMakeFiles/MansynLex.dir/tokengen.cpp.o -c /home/viniss/Temp/compiladores-workspace/tokengen.cpp",
+  "file": "/home/viniss/Temp/compiladores-workspace/tokengen.cpp"
+},
+{
+  "directory": "/home/viniss/Temp/compiladores-workspace/build",
+  "command": "/usr/bin/g++  -I/home/viniss/Temp/compiladores-workspace/build -I/home/viniss/Temp/compiladores-workspace  -o CMakeFiles/MansynLex.dir/main.cpp.o -c /home/viniss/Temp/compiladores-workspace/main.cpp",
+  "file": "/home/viniss/Temp/compiladores-workspace/main.cpp"
 },
 {
   "directory": "/home/viniss/Temp/compiladores-workspace/build",

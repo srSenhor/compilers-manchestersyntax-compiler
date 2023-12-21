@@ -153,29 +153,53 @@ lex.yy.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/lex.yy.cc.s
 .PHONY : lex.yy.cc.s
 
-token.o: token.cpp.o
-.PHONY : token.o
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-token.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/token.cpp.o
-.PHONY : token.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-token.i: token.cpp.i
-.PHONY : token.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-token.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/token.cpp.i
-.PHONY : token.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-token.s: token.cpp.s
-.PHONY : token.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-token.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/token.cpp.s
-.PHONY : token.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+tokengen.o: tokengen.cpp.o
+.PHONY : tokengen.o
+
+# target to build an object file
+tokengen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/tokengen.cpp.o
+.PHONY : tokengen.cpp.o
+
+tokengen.i: tokengen.cpp.i
+.PHONY : tokengen.i
+
+# target to preprocess a source file
+tokengen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/tokengen.cpp.i
+.PHONY : tokengen.cpp.i
+
+tokengen.s: tokengen.cpp.s
+.PHONY : tokengen.s
+
+# target to generate assembly for a file
+tokengen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MansynLex.dir/build.make CMakeFiles/MansynLex.dir/tokengen.cpp.s
+.PHONY : tokengen.cpp.s
 
 # Help Target
 help:
@@ -189,9 +213,12 @@ help:
 	@echo "... lex.yy.o"
 	@echo "... lex.yy.i"
 	@echo "... lex.yy.s"
-	@echo "... token.o"
-	@echo "... token.i"
-	@echo "... token.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... tokengen.o"
+	@echo "... tokengen.i"
+	@echo "... tokengen.s"
 .PHONY : help
 
 
